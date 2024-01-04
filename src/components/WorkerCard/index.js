@@ -1,8 +1,10 @@
-import "./WorkerCard.css"
+import "./WorkerCard.css";
+import { AiTwotoneCloseCircle } from "react-icons/ai";
 
-const WorkerCard = ({ worker, backgroundColor }) => {
+const WorkerCard = ({ worker, backgroundColor, onDelete }) => {
     return (
         <div className="worker">
+            <AiTwotoneCloseCircle size={25} className="delete" onClick={onDelete} />
             <div className="header" style={{ backgroundColor: backgroundColor }}>
                 <img src={worker.imagem} alt='Foto do colaborador' />
             </div>

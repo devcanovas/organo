@@ -2,51 +2,19 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Team from './components/Team';
+import Mock from './components/utils/mocks';
 
 function App() {
-  const _teams = [
-    {
-      name: 'Programação',
-      primaryColor: '#57C278',
-      secondaryColor: '#D9F7E9'
-    },
-    {
-      name: 'Front-End',
-      primaryColor: '#82CFFA',
-      secondaryColor: '#E8F8FF'
-    },
-    {
-      name: 'Data Science',
-      primaryColor: '#A6D157',
-      secondaryColor: '#F0F8E2'
-    },
-    {
-      name: 'Devops',
-      primaryColor: '#E06B69',
-      secondaryColor: '#FDE7E8'
-    },
-    {
-      name: 'UX e Design',
-      primaryColor: '#DB6EBF',
-      secondaryColor: '#FAE9F5'
-    },
-    {
-      name: 'Mobile',
-      primaryColor: '#FFBA05',
-      secondaryColor: '#FFF5D9'
-    },
-    {
-      name: 'Inovação e Gestão',
-      primaryColor: '#FF8A29',
-      secondaryColor: '#FFEEDF'
-    }
-  ]
-  const [workers, setWorkers] = useState([])
+  const [workers, setWorkers] = useState(Mock.mockWorkers)
   const onNewWorkerRegistered = (worker) => {
-    debugger;
     setWorkers([...workers, worker])
   }
-  const getTeamNames = _teams.map(team => team.name);
+  const getTeamNames = Mock.mockTeams.map(team => team.name);
+
+  const deleteWorker = () => {
+    console.log("Deletando worker")
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -55,13 +23,14 @@ function App() {
         onRegisterWorker={(worker) => onNewWorkerRegistered(worker)}
       />
       {
-        _teams.map((team) => {
+        Mock.mockTeams.map((team) => {
           return <Team
             key={team.name}
             name={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
             workers={workers.filter(worker => worker.time === team.name)}
+            onDelete={deleteWorker}
           />
         })
       }
