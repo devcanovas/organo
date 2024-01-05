@@ -29,6 +29,13 @@ function App() {
     }))
   }
 
+  function doFavorite(id) {
+    setWorkers(workers.map(worker => {
+      if(worker.id === id) worker.isFavorite = !worker.isFavorite;
+      return worker;
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -48,6 +55,7 @@ function App() {
             onChangeTeamColor={changeTeamColor}
             workers={workers.filter(worker => worker.time === team.name)}
             onDelete={deleteWorker}
+            onFavorite={doFavorite}
           />
         })
       }

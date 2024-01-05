@@ -20,7 +20,8 @@ const Form = (props) => {
             nome: nome,
             cargo: cargo,
             imagem: imagem,
-            time: time
+            time: time,
+            isFavorite: false
         })
         setNome('');
         setCargo('');

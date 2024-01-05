@@ -2,7 +2,7 @@ import hexToRgba from 'hex-to-rgba'
 import WorkerCard from '../WorkerCard'
 import './team.css'
 
-const Team = ({id, name,  color, workers, onDelete, onChangeTeamColor}) => {
+const Team = ({id, name,  color, workers, onDelete, onChangeTeamColor, onFavorite}) => {
     return (
         workers.length > 0 && <section className='team' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(color, '0.5') }}>
             <input value={color} onChange={event => {onChangeTeamColor(event.target.value, id)}} type='color' className='input-color'/>
@@ -10,7 +10,7 @@ const Team = ({id, name,  color, workers, onDelete, onChangeTeamColor}) => {
             <div className='workers'>
                 {
                     workers.map((worker) => {
-                        return <WorkerCard backgroundColor={color} key={worker.nome} worker={worker} onDelete={onDelete}/>
+                        return <WorkerCard onFavorite={onFavorite} backgroundColor={color} key={worker.nome} worker={worker} onDelete={onDelete}/>
                     })
                 }
             </div>
