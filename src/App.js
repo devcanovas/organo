@@ -12,7 +12,7 @@ function App() {
 
   const [teams, setTeams] = useState(Mock.mockTeams);
   const onNewTeamRegistered = (team) => {
-    setWorkers([...teams, team])
+    setTeams([...teams, team])
   }
   const getTeamNames = teams.map(team => team.name);
 

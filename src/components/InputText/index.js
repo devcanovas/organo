@@ -1,4 +1,4 @@
-import './InputText.css'
+import './input-text.css'
 
 const InputText = (props) => {
     const onType = (event) => {
@@ -8,7 +8,12 @@ const InputText = (props) => {
     return (
         <div className="input__text">
             <label>{props.label}</label>
-            <input value={props.value} onChange={onType} required={props.isRequired} placeholder={props.placeholder} />
+            <input
+                value={props.value}
+                onChange={onType}
+                required={props.isRequired}
+                placeholder={props.placeholder}
+            />
         </div>
     )
 }

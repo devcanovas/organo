@@ -1,4 +1,4 @@
-import "./WorkerCard.css";
+import "./worker-card.css";
 import { AiTwotoneCloseCircle } from "react-icons/ai";
 
 const WorkerCard = ({ worker, backgroundColor, onDelete }) => {
