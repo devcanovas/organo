@@ -2,7 +2,7 @@ import { useState } from "react"
 import Botao from "../Botao"
 import Dropdown from "../Dropdown"
 import InputText from "../InputText"
-import './form.css'
+import './form-style.css'
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
