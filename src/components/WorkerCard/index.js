@@ -2,9 +2,12 @@ import "./worker-card.css";
 import { AiTwotoneCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const WorkerCard = ({ worker, backgroundColor, onDelete, onFavorite }) => {
+    function doFavorite() {
+        onFavorite(worker.id)
+    }
     const propsFavorites = {
         size: 25,
-        onClick: onFavorite(worker.id)
+        onClick: doFavorite
     }
     return (
         <div className="worker">
