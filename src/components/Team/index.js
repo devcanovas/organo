@@ -1,6 +1,6 @@
 import hexToRgba from 'hex-to-rgba'
 import WorkerCard from '../WorkerCard'
-import './team.css'
+import './team-style.css'
 
 const Team = ({id, name,  color, workers, onDelete, onChangeTeamColor, onFavorite}) => {
     return (
