@@ -9,18 +9,21 @@ function App() {
   const onNewWorkerRegistered = (worker) => {
     setWorkers([...workers, worker])
   }
-  const [teams, setTeams] = useState(Mock.mockTeams);
 
+  const [teams, setTeams] = useState(Mock.mockTeams);
+  const onNewTeamRegistered = (team) => {
+    setWorkers([...teams, team])
+  }
   const getTeamNames = teams.map(team => team.name);
 
-  function deleteWorker() {
-    console.log("Deletando worker")
+  function deleteWorker(id) {
+    setWorkers(workers.filter(worker => worker.id !== id));
   }
 
-  function changeTeamColor(color, nameTeam) {
+  function changeTeamColor(color, id) {
     setTeams(teams.map(team => {
-      if (team.name === nameTeam) {
-        team.primaryColor = color;
+      if (team.id === id) {
+        team.color = color;
       }
       return team;
     }))
@@ -32,14 +35,16 @@ function App() {
       <Form
         teamNames={getTeamNames}
         onRegisterWorker={(worker) => onNewWorkerRegistered(worker)}
+        onRegisterTeam={team => onNewTeamRegistered(team)}
       />
       {
         teams.map((team) => {
           return <Team
-            key={team.name}
+            key={team.id}
+            id={team.id}
             name={team.name}
             primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
+            color={team.color}
             onChangeTeamColor={changeTeamColor}
             workers={workers.filter(worker => worker.time === team.name)}
             onDelete={deleteWorker}

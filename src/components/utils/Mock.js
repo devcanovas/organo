@@ -1,60 +1,66 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const _mockTeams = [
     {
+        id: uuidv4(),
         name: 'Programação',
-        primaryColor: '#57C278',
-        secondaryColor: '#D9F7E9'
+        color: '#57C278'
     },
     {
+        id: uuidv4(),
         name: 'Front-End',
-        primaryColor: '#82CFFA',
-        secondaryColor: '#E8F8FF'
+        color: '#82CFFA'
     },
     {
+        id: uuidv4(),
         name: 'Data Science',
-        primaryColor: '#A6D157',
-        secondaryColor: '#F0F8E2'
+        color: '#A6D157'
     },
     {
+        id: uuidv4(),
         name: 'Devops',
-        primaryColor: '#E06B69',
-        secondaryColor: '#FDE7E8'
+        color: '#E06B69'
     },
     {
+        id: uuidv4(),
         name: 'UX e Design',
-        primaryColor: '#DB6EBF',
-        secondaryColor: '#FAE9F5'
+        color: '#DB6EBF'
     },
     {
+        id: uuidv4(),
         name: 'Mobile',
-        primaryColor: '#FFBA05',
-        secondaryColor: '#FFF5D9'
+        color: '#FFBA05'
     },
     {
+        id: uuidv4(),
         name: 'Inovação e Gestão',
-        primaryColor: '#FF8A29',
-        secondaryColor: '#FFEEDF'
+        color: '#FF8A29'
     }
 ]
 const _mockWorkers = [
     {
+        id: uuidv4(),
         nome: 'Lucas Montano',
         cargo: 'Android Engineer',
         imagem: 'http://github.com/lucasmontano.png',
         time: 'Mobile'
     },
     {
+        id: uuidv4(),
         nome: 'Filipe Deschamps',
         cargo: 'NodeJS Developer',
         imagem: 'http://github.com/filipedeschamps.png',
         time: 'Programação'
     },
     {
+        id: uuidv4(),
         nome: 'Micael Mota',
         cargo: 'Full-stack developer',
         imagem: 'http://github.com/micaelomota.png',
         time: 'Front-End'
     },
     {
+        id: uuidv4(),
         nome: 'Matheus Canovas',
         cargo: 'Full-stack Developer',
         imagem: 'http://github.com/devcanovas.png',
